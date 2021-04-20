@@ -1,9 +1,9 @@
 import React from 'react'
 // import { NavLink } from 'react-router-dom'
-import {FaBars} from 'react-icons/fa'
-import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks } from './NavbarElements'
+import { FaBars } from 'react-icons/fa'
+import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink } from './NavbarElements'
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
     return (
         <>
             <Nav>
@@ -12,7 +12,7 @@ const Navbar = () => {
                         EL-BOY-BO
                     </NavLogo>
 
-                    <MobileIcon>
+                    <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
 
@@ -30,8 +30,12 @@ const Navbar = () => {
                             <NavLinks to='signup'>Sign up</NavLinks>
                         </NavItem>
                     </NavMenu>
+
+                    <NavBtn>
+                        <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+                    </NavBtn>
                 </NavbarContainer>
-            </Nav> 
+            </Nav>
         </>
     )
 }
